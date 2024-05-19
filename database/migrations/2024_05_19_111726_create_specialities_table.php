@@ -18,6 +18,8 @@ class CreateSpecialitiesTable extends Migration
             $table->string('speciality_title');
             $table->integer('speciality_duration');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 

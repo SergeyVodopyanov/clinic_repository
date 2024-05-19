@@ -11,6 +11,14 @@
                         <a href="{{ route('admin.speciality.edit', $speciality->id) }}">
                             <i class="nav-icon fa-solid fa-pen"></i>
                         </a>
+                        <form action="{{ route('admin.speciality.delete', $speciality->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="border-0 bg-transparent">
+                                <i class="fa-solid fas fa-trash text-danger" role="button"></i>
+                            </button>
+                        </form>
+
                     </div><!-- /.col -->
 
 
@@ -47,7 +55,7 @@
                                     </tr>
                                     <tr>
                                         <td>Продолжительность сеанса</td>
-                                        <td>{{ $speciality->speciality_duration }}</td>
+                                        <td>{{ $speciality->speciality_duration }} минут</td>
                                     </tr>
                                     </tbody>
                                 </table>

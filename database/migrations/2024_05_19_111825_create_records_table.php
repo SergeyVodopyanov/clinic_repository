@@ -31,6 +31,8 @@ class CreateRecordsTable extends Migration
             $table->index('speciality_id', 'record_speciality_idx');
             $table->foreign('speciality_id', 'record_speciality_fk')->on('specialities')->references('id');
 
+            $table->softDeletes();
+
         });
     }
 

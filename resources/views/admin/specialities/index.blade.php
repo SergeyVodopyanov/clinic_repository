@@ -49,7 +49,7 @@
                                     @foreach($specialities as $speciality)
                                     <tr>
                                         <td>{{ $speciality->speciality_title }}</td>
-                                        <td>{{ $speciality->speciality_duration }}</td>
+                                        <td>{{ $speciality->speciality_duration }}  минут</td>
                                         <td>
                                             <a href="{{ route('admin.speciality.show', $speciality->id) }}">
                                                 <i class="nav-icon far fa-solid fa-eye"></i>
@@ -59,6 +59,15 @@
                                             <a href="{{ route('admin.speciality.edit', $speciality->id) }}">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('admin.speciality.delete', $speciality->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="border-0 bg-transparent">
+                                                    <i class="fa-solid fas fa-trash text-danger" role="button"></i>
+                                                </button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

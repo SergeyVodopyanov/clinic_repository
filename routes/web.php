@@ -35,6 +35,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/{speciality}', 'ShowController')->name('admin.speciality.show');
         Route::get('/{speciality}/edit', 'EditController')->name('admin.speciality.edit');
         Route::patch('/{speciality}', 'UpdateController')->name('admin.speciality.update');
+        Route::delete('/{speciality}', 'DeleteController')->name('admin.speciality.delete');
+
 
     });
 });

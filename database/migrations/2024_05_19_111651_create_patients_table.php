@@ -24,6 +24,8 @@ class CreatePatientsTable extends Migration
             $table->string('patient_phonenumber');
             $table->string('patient_email');
             $table->timestamps();
+
+            $table->softDeletes();
         });
     }
 
