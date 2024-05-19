@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+Route::group(['namespace' => 'Main'], function () {
+    Route::get('/', 'IndexController');
+});
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
