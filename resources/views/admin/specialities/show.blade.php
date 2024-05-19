@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0"> Специальности </h1>
+                        <h1 class="m-0"> {{ $speciality->speciality_title }} </h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,9 +27,7 @@
             <div class="container-fluid"> <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.speciality.create') }}" class="btn btn-block btn-primary">
-                            Добавить
-                        </a>
+
                     </div>
                 </div>
                 <div class="row">

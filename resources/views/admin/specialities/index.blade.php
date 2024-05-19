@@ -41,6 +41,8 @@
                                     <tr>
                                         <th>Название</th>
                                         <th>Продолжительность сеанса</th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -51,6 +53,11 @@
                                         <td>
                                             <a href="{{ route('admin.speciality.show', $speciality->id) }}">
                                                 <i class="nav-icon far fa-solid fa-eye"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin.speciality.edit', $speciality->id) }}">
+                                                <i class="fa-solid fa-pen"></i>
                                             </a>
                                         </td>
                                     </tr>
