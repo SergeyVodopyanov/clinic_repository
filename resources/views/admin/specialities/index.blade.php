@@ -26,11 +26,39 @@
         <section class="content">
             <div class="container-fluid"> <!-- Small boxes (Stat box) -->
                 <div class="row">
-                    <div class="col-1">
-                        <a href="{{ route('admin.speciality.create') }}" class="btn btn-block btn-primary">Добавить</a>
+                    <div class="col-1 mb-3">
+                        <a href="{{ route('admin.speciality.create') }}" class="btn btn-block btn-primary">
+                            Добавить
+                        </a>
                     </div>
-                </div> <!-- /.row -->
-            </div><!-- /.container-fluid -->
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                    <tr>
+                                        <th>Название</th>
+                                        <th>Продолжительность сеанса</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($specialities as $speciality)
+                                    <tr>
+                                        <td>{{ $speciality->speciality_title }}</td>
+                                        <td>{{ $speciality->speciality_duration }}</td>
+                                    </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div><!-- /.container-fluid -->
+                    </div>
+                </div>
         </section><!-- /.content -->
 
     </div>
