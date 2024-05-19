@@ -32,6 +32,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/', 'IndexController')->name('admin.speciality.index');
         Route::get('/create', 'CreateController')->name('admin.speciality.create');
         Route::post('/', 'StoreController')->name('admin.speciality.store');
+        Route::get('/{speciality}', 'ShowController')->name('admin.speciality.show');
+
 
     });
 });

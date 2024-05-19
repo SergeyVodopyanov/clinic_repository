@@ -37,27 +37,17 @@
                         <div class="card">
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>Название</th>
-                                        <th>Продолжительность сеанса</th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
-                                    @foreach($specialities as $speciality)
                                     <tr>
+                                        <td>Название</td>
                                         <td>{{ $speciality->speciality_title }}</td>
-                                        <td>{{ $speciality->speciality_duration }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.speciality.show', $speciality->id) }}">
-                                                <i class="nav-icon far fa-solid fa-eye"></i>
-                                            </a>
-                                        </td>
                                     </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td>Продолжительность сеанса</td>
+                                        <td>{{ $speciality->speciality_duration }}</td>
+                                    </tr>
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
                         <!-- /.card-body -->
