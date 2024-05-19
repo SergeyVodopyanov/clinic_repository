@@ -29,7 +29,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/', 'IndexController');
     });
     Route::group(['namespace' => 'Speciality', 'prefix' => 'specialities'], function () {
-        Route::get('/', 'IndexController');
+        Route::get('/', 'IndexController')->name('admin.speciality.index');
+        Route::get('/create', 'CreateController')->name('admin.speciality.create');
     });
 });
 
