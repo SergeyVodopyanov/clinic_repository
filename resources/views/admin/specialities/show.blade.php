@@ -6,9 +6,14 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0"> {{ $speciality->speciality_title }} </h1>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h1 class="m-0 mr-2"> {{ $speciality->speciality_title }} </h1>
+                        <a href="{{ route('admin.speciality.edit', $speciality->id) }}">
+                            <i class="nav-icon fa-solid fa-pen"></i>
+                        </a>
                     </div><!-- /.col -->
+
+
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>

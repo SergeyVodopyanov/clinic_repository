@@ -34,8 +34,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::post('/', 'StoreController')->name('admin.speciality.store');
         Route::get('/{speciality}', 'ShowController')->name('admin.speciality.show');
         Route::get('/{speciality}/edit', 'EditController')->name('admin.speciality.edit');
-
-
+        Route::patch('/{speciality}', 'UpdateController')->name('admin.speciality.update');
 
     });
 });
