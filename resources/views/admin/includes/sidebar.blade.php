@@ -6,16 +6,30 @@
         <ul class="pt-3 nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class             with font-awesome or any other icon font library -->
             <li class="nav-item">
-                <a href="{{ route('admin.speciality.index') }}" class="nav-link active">
+                <a href="{{ route('admin.speciality.index') }}" class="nav-link">
                     <i class="nav-icon far fa-folder"></i>
                         <p> Специальности </p>
                     </a>
             </li>
 
             <li class="nav-item">
-                <a href="{{ route('admin.patient.index') }}" class="nav-link active">
+                <a href="{{ route('admin.patient.index') }}" class="nav-link">
                     <i class="nav-icon far fa-folder"></i>
                         <p> Пациенты </p>
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('admin.record.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Записи на приём </p>
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('admin.service.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Услуги </p>
                     </a>
             </li>
 

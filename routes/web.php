@@ -46,6 +46,24 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::patch('/{patient}', 'UpdateController')->name('admin.patient.update');
         Route::delete('/{patient}', 'DeleteController')->name('admin.patient.delete');
     });
+    Route::group(['namespace' => 'Service', 'prefix' => 'services'], function () {
+        Route::get('/', 'IndexController')->name('admin.service.index');
+        Route::get('/create', 'CreateController')->name('admin.service.create');
+        Route::post('/', 'StoreController')->name('admin.service.store');
+        Route::get('/{service}', 'ShowController')->name('admin.service.show');
+        Route::get('/{service}/edit', 'EditController')->name('admin.service.edit');
+        Route::patch('/{service}', 'UpdateController')->name('admin.service.update');
+        Route::delete('/{service}', 'DeleteController')->name('admin.service.delete');
+    });
+    Route::group(['namespace' => 'Record', 'prefix' => 'records'], function () {
+        Route::get('/', 'IndexController')->name('admin.record.index');
+        Route::get('/create', 'CreateController')->name('admin.record.create');
+        Route::post('/', 'StoreController')->name('admin.record.store');
+        Route::get('/{record}', 'ShowController')->name('admin.record.show');
+        Route::get('/{record}/edit', 'EditController')->name('admin.record.edit');
+        Route::patch('/{record}', 'UpdateController')->name('admin.record.update');
+        Route::delete('/{record}', 'DeleteController')->name('admin.record.delete');
+    });
 });
 
 

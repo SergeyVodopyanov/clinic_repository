@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Редактирование пациента</h1>
+                        <h1 class="m-0">Редактирование записи на приём</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
             <div class="container-fluid"> <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.patient.update', $patient->id) }}" method="POST" class="w-25">
+                        <form action="{{ route('admin.record.update', $record->id) }}" method="POST" class="w-25">
                             @csrf
                             @method('PATCH')
 
@@ -36,47 +36,47 @@
 
 
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_surname" placeholder="Фамилия" value="{{ $patient->patient_surname }}">
-                                @error('patient_surname')
+                                <input type="text" class="form-control" name="record_surname" placeholder="Фамилия" value="{{ $record->record_surname }}">
+                                @error('record_surname')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_name" placeholder="Имя" value="{{ $patient->patient_name }}">
-                                @error('patient_name')
+                                <input type="text" class="form-control" name="record_name" placeholder="Имя" value="{{ $record->record_name }}">
+                                @error('record_name')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_middlename" placeholder="Отчество" value="{{ $patient->patient_middlename }}">
+                                <input type="text" class="form-control" name="record_middlename" placeholder="Отчество" value="{{ $record->record_middlename }}">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_gender" placeholder="Пол" value="{{ $patient->patient_gender }}">
-                                @error('patient_gender')
+                                <input type="text" class="form-control" name="record_gender" placeholder="Пол" value="{{ $record->record_gender }}">
+                                @error('record_gender')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="date" class="form-control" name="patient_dateofbirth" placeholder="Дата рождения" value="{{ $patient->patient_dateofbirth }}">
-                                @error('patient_dateofbirth')
+                                <input type="date" class="form-control" name="record_dateofbirth" placeholder="Дата рождения" value="{{ $record->record_dateofbirth }}">
+                                @error('record_dateofbirth')
                                 <div class="text-danger">Это поле необходимо для заполнения </div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_medcardnumber" placeholder="Номер медицинской карты" value="{{ $patient->patient_medcardnumber }}">
-                                @error('patient_medcardnumber')
+                                <input type="text" class="form-control" name="record_medcardnumber" placeholder="Номер медицинской карты" value="{{ $record->record_medcardnumber }}">
+                                @error('record_medcardnumber')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_phonenumber" placeholder="Номер телефона" value="{{ $patient->patient_phonenumber }}">
-                                @error('patient_phonenumber')
+                                <input type="text" class="form-control" name="record_phonenumber" placeholder="Номер телефона" value="{{ $record->record_phonenumber }}">
+                                @error('record_phonenumber')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_email" placeholder="Почта" value="{{ $patient->patient_email }}">
-                                @error('patient_email')
+                                <input type="text" class="form-control" name="record_email" placeholder="Почта" value="{{ $record->record_email }}">
+                                @error('record_email')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
