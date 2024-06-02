@@ -37,7 +37,9 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="speciality_duration" placeholder="Продолжительность сеанса">
+
+                                <input type="number" class="form-control" name="speciality_duration" id="duration" min="5" max="40" step="5" placeholder="Продолжительность приёма">
+
                                 @error('title')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror

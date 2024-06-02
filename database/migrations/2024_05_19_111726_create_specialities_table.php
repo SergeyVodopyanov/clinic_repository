@@ -13,7 +13,7 @@ class CreateSpecialitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('specialities', function (Blueprint $table) {
+        Schema::create('speciality', function (Blueprint $table) {
             $table->id();
             $table->string('speciality_title');
             $table->integer('speciality_duration');
@@ -30,6 +30,6 @@ class CreateSpecialitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specialities');
+        Schema::dropIfExists('speciality');
     }
 }

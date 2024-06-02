@@ -10,6 +10,6 @@ class EditController extends Controller
 {
     public function __invoke(Speciality $speciality)
     {
-        return view('admin.specialities.edit', compact('speciality'));
+        return view('admin.speciality.edit', compact('speciality'));
     }
 }

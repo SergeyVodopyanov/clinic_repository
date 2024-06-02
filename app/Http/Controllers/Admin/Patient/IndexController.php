@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Speciality;
+namespace App\Http\Controllers\Admin\Patient;
 
 use App\Http\Controllers\Controller;
+use App\Models\Patient;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $specialities = Speciality::all();
-        return view('admin.speciality.index', compact('specialities'));
+        $patients = Patient::all();
+        return view('admin.patient.index', compact('patients'));
     }
 }

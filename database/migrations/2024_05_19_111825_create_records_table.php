@@ -29,7 +29,7 @@ class CreateRecordsTable extends Migration
 
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'record_speciality_idx');
-            $table->foreign('speciality_id', 'record_speciality_fk')->on('specialities')->references('id');
+            $table->foreign('speciality_id', 'record_speciality_fk')->on('speciality')->references('id');
 
             $table->softDeletes();
 

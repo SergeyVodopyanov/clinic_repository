@@ -26,7 +26,7 @@ class CreateDoctorSpecialitiesTable extends Migration
             $table->index('speciality_id', 'doctor_speciality_speciality_idx');
             //FK
             $table->foreign('doctor_id', 'doctor_speciality_doctor_fk')->on('doctors')->references('id');
-            $table->foreign('speciality_id', 'doctor_speciality_speciality_fk')->on('specialities')->references('id');
+            $table->foreign('speciality_id', 'doctor_speciality_speciality_fk')->on('speciality')->references('id');
 
             $table->softDeletes();
 

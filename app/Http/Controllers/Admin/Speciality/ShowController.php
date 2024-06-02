@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ShowController extends Controller
 {
     public function __invoke(Speciality $speciality){
-        return view('admin.specialities.show', compact('speciality'));
+        return view('admin.speciality.show', compact('speciality'));
     }
 
 }

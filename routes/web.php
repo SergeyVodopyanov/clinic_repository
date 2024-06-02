@@ -36,8 +36,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::get('/{speciality}/edit', 'EditController')->name('admin.speciality.edit');
         Route::patch('/{speciality}', 'UpdateController')->name('admin.speciality.update');
         Route::delete('/{speciality}', 'DeleteController')->name('admin.speciality.delete');
-
-
+    });
+    Route::group(['namespace' => 'Patient', 'prefix' => 'patients'], function () {
+        Route::get('/', 'IndexController')->name('admin.patient.index');
+        Route::get('/create', 'CreateController')->name('admin.patient.create');
+        Route::post('/', 'StoreController')->name('admin.patient.store');
+        Route::get('/{patient}', 'ShowController')->name('admin.patient.show');
+        Route::get('/{patient}/edit', 'EditController')->name('admin.patient.edit');
+        Route::patch('/{patient}', 'UpdateController')->name('admin.patient.update');
+        Route::delete('/{patient}', 'DeleteController')->name('admin.patient.delete');
     });
 });
 
