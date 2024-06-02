@@ -18,10 +18,11 @@ class CreateDoctorsTable extends Migration
             $table->string('doctor_name');
             $table->string('doctor_middlename')->nullable();
             $table->timestamps();
+
+
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'doctor_speciality_idx');
-            $table->foreign('speciality_id', 'doctor_speciality_fk')
-                ->on('speciality')->references('id');
+            $table->foreign('speciality_id', 'doctor_speciality_fk')->on('specialities')->references('id');
 
             $table->softDeletes();
         });

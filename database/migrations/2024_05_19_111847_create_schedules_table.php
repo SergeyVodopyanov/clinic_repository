@@ -21,7 +21,7 @@ class CreateSchedulesTable extends Migration
             $table->timestamps();
 
 
-            $table->unsignedBigInteger('doctor_id')->nullable();
+            $table->unsignedBigInteger('doctor_id');
             $table->index('doctor_id', 'schedule_doctor_idx');
             $table->foreign('doctor_id', 'schedule_doctor_fk')->on('doctors')->references('id');
 

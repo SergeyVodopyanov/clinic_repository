@@ -33,6 +33,20 @@
                     </a>
             </li>
 
+             <li class="nav-item">
+                <a href="{{ route('admin.schedule.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Расписание </p>
+                    </a>
+            </li>
+
+             <li class="nav-item">
+                <a href="{{ route('admin.doctor.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Врачи </p>
+                    </a>
+            </li>
+
         </ul>
     </div>
 

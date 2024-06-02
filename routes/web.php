@@ -55,6 +55,24 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::patch('/{service}', 'UpdateController')->name('admin.service.update');
         Route::delete('/{service}', 'DeleteController')->name('admin.service.delete');
     });
+    Route::group(['namespace' => 'Schedule', 'prefix' => 'schedules'], function () {
+        Route::get('/', 'IndexController')->name('admin.schedule.index');
+        Route::get('/create', 'CreateController')->name('admin.schedule.create');
+        Route::post('/', 'StoreController')->name('admin.schedule.store');
+        Route::get('/{schedule}', 'ShowController')->name('admin.schedule.show');
+        Route::get('/{schedule}/edit', 'EditController')->name('admin.schedule.edit');
+        Route::patch('/{schedule}', 'UpdateController')->name('admin.schedule.update');
+        Route::delete('/{schedule}', 'DeleteController')->name('admin.schedule.delete');
+    });
+    Route::group(['namespace' => 'Doctor', 'prefix' => 'doctors'], function () {
+        Route::get('/', 'IndexController')->name('admin.doctor.index');
+        Route::get('/create', 'CreateController')->name('admin.doctor.create');
+        Route::post('/', 'StoreController')->name('admin.doctor.store');
+        Route::get('/{doctor}', 'ShowController')->name('admin.doctor.show');
+        Route::get('/{doctor}/edit', 'EditController')->name('admin.doctor.edit');
+        Route::patch('/{doctor}', 'UpdateController')->name('admin.doctor.update');
+        Route::delete('/{doctor}', 'DeleteController')->name('admin.doctor.delete');
+    });
     Route::group(['namespace' => 'Record', 'prefix' => 'records'], function () {
         Route::get('/', 'IndexController')->name('admin.record.index');
         Route::get('/create', 'CreateController')->name('admin.record.create');

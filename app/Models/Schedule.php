@@ -13,4 +13,9 @@ class Schedule extends Model
 
     protected $table = 'schedules';
     protected $guarded = false;
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }
