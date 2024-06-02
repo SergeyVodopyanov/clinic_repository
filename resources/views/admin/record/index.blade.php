@@ -39,25 +39,17 @@
                                 <table class="table table-hover text-nowrap">
                                     <thead>
                                     <tr>
-                                        <th>Дата</th>
-                                        <th>Время</th>
                                         <th>Пациент</th>
-                                        <th>Специальность</th>
-                                        <th>Врач</th>
-                                        <th>Услуга</th>
+                                        <th>Дата</th>
+                                        <th>Специальность врача</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($records as $record)
                                     <tr>
+                                        <td>{{ $record->patient->patient_surname . " " .  $record->patient->patient_name . " " . $record->patient->patient_middlename }}</td>
                                         <td>{{ $record->record_date }}</td>
-                                        <td>{{ $record->record_time }}</td>
-                                        <td>{{ $record->record_middlename }}</td>
-                                        <td>{{ $record->record_gender }}</td>
-                                        <td>{{ $record->record_dateofbirth }}</td>
-                                        <td>{{ $record->record_medcardnumber }}</td>
-                                        <td>{{ $record->record_phonenumber }}</td>
-                                        <td>{{ $record->record_email }}</td>
+                                        <td>{{ $record->speciality->speciality_title }}</td>
                                         <td>
                                             <a href="{{ route('admin.record.show', $record->id) }}">
                                                 <i class="nav-icon far fa-solid fa-eye"></i>

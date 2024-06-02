@@ -47,6 +47,13 @@
                     </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.record.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Записи на приём </p>
+                    </a>
+            </li>
+
         </ul>
     </div>
 

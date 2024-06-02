@@ -17,4 +17,10 @@ class Record extends Model
     public function patient(){
         return $this->belongsTo(Patient::class);
     }
+    public function speciality(){
+        return $this->belongsTo(Speciality::class);
+    }
+    public function doctor(){
+        return $this->belongsTo(Doctor::class);
+    }
 }
