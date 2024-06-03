@@ -81,17 +81,24 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Record', 'prefix' => 'records'], function () {
         Route::get('/', 'IndexController')->name('admin.record.index');
         Route::get('/create', 'CreateController')->name('admin.record.create');
-
         Route::post('/', 'StoreController')->name('admin.record.store');
-
         Route::get('/{record}/edit', 'EditController')->name('admin.record.edit');
         Route::patch('/{record}', 'UpdateController')->name('admin.record.update');
-
     });
     Route::group(['namespace' => 'Record2', 'prefix' => 'records2'], function () {
         Route::get('/', 'IndexController')->name('admin.record2.index');
         Route::get('/create', 'CreateController')->name('admin.record2.create');
         Route::post('/', 'StoreController')->name('admin.record2.store');
+    });
+    Route::group(['namespace' => 'Record3', 'prefix' => 'records3'], function () {
+        Route::get('/', 'IndexController')->name('admin.record3.index');
+        Route::get('/create', 'CreateController')->name('admin.record3.create');
+        Route::post('/', 'StoreController')->name('admin.record3.store');
+    });
+    Route::group(['namespace' => 'Record4', 'prefix' => 'records4'], function () {
+        Route::get('/', 'IndexController')->name('admin.record4.index');
+        Route::get('/create', 'CreateController')->name('admin.record4.create');
+        Route::post('/', 'StoreController')->name('admin.record4.store');
     });
 
 });

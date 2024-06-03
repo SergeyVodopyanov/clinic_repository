@@ -55,6 +55,20 @@
                     </a>
             </li>
 
+            <li class="nav-item">
+                <a href="{{ route('admin.record3.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Записи на приём 3</p>
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('admin.record4.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Записи на приём</p>
+                    </a>
+            </li>
+
         </ul>
     </div>
 

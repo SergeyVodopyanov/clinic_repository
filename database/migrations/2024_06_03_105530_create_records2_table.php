@@ -14,7 +14,7 @@ class CreateRecords2Table extends Migration
     public function up()
     {
         Schema::create('records2', function (Blueprint $table) {
-             $table->id();
+            $table->id();
             $table->timestamps();
 
             $table->unsignedBigInteger('patient_id')->nullable();
@@ -32,6 +32,7 @@ class CreateRecords2Table extends Migration
             $table->unsignedBigInteger('service_id')->nullable();
             $table->index('service_id', 'record2_service_idx');
             $table->foreign('service_id', 'record2_service_fk')->on('services')->references('id');
+
             $table->softDeletes();
         });
     }

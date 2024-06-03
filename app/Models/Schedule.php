@@ -18,4 +18,9 @@ class Schedule extends Model
     {
         return $this->belongsTo(Doctor::class);
     }
+
+    public function sessions()
+    {
+        return $this->hasMany(Session::class);
+    }
 }
