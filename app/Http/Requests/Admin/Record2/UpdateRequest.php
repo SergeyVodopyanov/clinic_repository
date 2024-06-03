@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Record;
+namespace App\Http\Requests\Admin\Record2;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,10 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-           'patient_id' => 'required',
-           'speciality_id' => 'required',
+            'patient_id' => 'required',
+            'speciality_id' => 'required',
+            'doctor_id' => 'required',
+            'service_id' => 'required',
         ];
-
     }
 }
-

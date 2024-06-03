@@ -42,6 +42,8 @@
                                         <th>Пациент</th>
                                         <!-- <th>Дата</th> -->
                                         <th>Специальность врача</th>
+                                        <th>Врач</th>
+                                        <th>Услуга</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -49,6 +51,8 @@
                                     <tr>
                                         <td>{{ $record->patient->patient_surname . " " .  $record->patient->patient_name . " " . $record->patient->patient_middlename }}</td>
                                         <td>{{ $record->speciality->speciality_title }}</td>
+                                        <td>{{ $record->doctor->doctor_surname . " " .  $record->doctor->doctor_name . " " . $record->doctor->doctor_middlename }}</td>
+                                        <td>{{ $record->service->service_title }}</td>
 
                                         <td>
                                             <a href="{{ route('admin.record.edit', $record->id) }}">

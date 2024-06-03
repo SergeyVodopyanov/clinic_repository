@@ -15,8 +15,8 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->date('record_date');
-            $table->time('record_time');
+            //$table->date('record_date');
+            //$table->time('record_time');
             $table->timestamps();
 
             $table->unsignedBigInteger('patient_id');
@@ -25,15 +25,15 @@ class CreateRecordsTable extends Migration
 
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'record_speciality_idx');
-            $table->foreign('speciality_id', 'record_speciality_fk')->on('speciality')->references('id');
+            $table->foreign('speciality_id', 'record_speciality_fk')->on('specialities')->references('id');
 
-            $table->unsignedBigInteger('doctor_id');
-            $table->index('doctor_id', 'record_doctor_idx');
-            $table->foreign('doctor_id', 'record_doctor_fk')->on('doctors')->references('id');
+            //$table->unsignedBigInteger('doctor_id');
+            //$table->index('doctor_id', 'record_doctor_idx');
+            //$table->foreign('doctor_id', 'record_doctor_fk')->on('doctors')->references('id');
 
-            $table->unsignedBigInteger('service_id');
-            $table->index('service_id', 'record_service_idx');
-            $table->foreign('service_id', 'record_service_fk')->on('services')->references('id');
+            //$table->unsignedBigInteger('service_id');
+            //$table->index('service_id', 'record_service_idx');
+            //$table->foreign('service_id', 'record_service_fk')->on('services')->references('id');
 
             $table->softDeletes();
 

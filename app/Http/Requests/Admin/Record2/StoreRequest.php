@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Record;
+namespace App\Http\Requests\Admin\Record2;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,8 +24,10 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-           'patient_id' => 'required',
-           'speciality_id' => 'required',
+            'patient_id' => 'required',
+            'speciality_id' => 'required',
+            'doctor_id' => 'required',
+            'service_id' => 'required',
         ];
 
     }

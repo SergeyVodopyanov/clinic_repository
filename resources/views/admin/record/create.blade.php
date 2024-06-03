@@ -29,10 +29,18 @@
                     <div class="col-12">
                         <form action="{{ route('admin.record.store') }}" method="POST" class="w-25">
                             @csrf
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="record_surname" placeholder="Фамилия">
-                                @error('record_surname')
-                                <div class="text-danger">Это поле необходимо для заполнения</div>
+                            <div class="form-group w-100">
+                                <label>Выберите пациента</label>
+                                <select name="patient_id" class="form-control">
+                                    @foreach($patients as $patient)
+                                        <option value="{{ $patient->id }}"
+                                            {{ $patient->id == old('patient_id') ? ' selected' : '' }}
+                                        >{{ $patient->patient_surname . " " . $patient->patient_name . " " . $patient->patient_middlename }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('patient_id')
+                                <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
 
@@ -46,7 +54,7 @@
                                         </option>
                                     @endforeach
                                 </select>
-                                @error('category_id')
+                                @error('speciality_id')
                                 <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>

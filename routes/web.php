@@ -73,15 +73,27 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::patch('/{doctor}', 'UpdateController')->name('admin.doctor.update');
         Route::delete('/{doctor}', 'DeleteController')->name('admin.doctor.delete');
     });
+
+
+
+
+
     Route::group(['namespace' => 'Record', 'prefix' => 'records'], function () {
         Route::get('/', 'IndexController')->name('admin.record.index');
         Route::get('/create', 'CreateController')->name('admin.record.create');
+
         Route::post('/', 'StoreController')->name('admin.record.store');
-        Route::get('/{record}', 'ShowController')->name('admin.record.show');
+
         Route::get('/{record}/edit', 'EditController')->name('admin.record.edit');
         Route::patch('/{record}', 'UpdateController')->name('admin.record.update');
-        Route::delete('/{record}', 'DeleteController')->name('admin.record.delete');
+
     });
+    Route::group(['namespace' => 'Record2', 'prefix' => 'records2'], function () {
+        Route::get('/', 'IndexController')->name('admin.record2.index');
+        Route::get('/create', 'CreateController')->name('admin.record2.create');
+        Route::post('/', 'StoreController')->name('admin.record2.store');
+    });
+
 });
 
 

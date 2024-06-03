@@ -19,12 +19,6 @@
                     </a>
             </li>
 
-            <li class="nav-item">
-                <a href="{{ route('admin.record.index') }}" class="nav-link">
-                    <i class="nav-icon far fa-folder"></i>
-                        <p> Записи на приём </p>
-                    </a>
-            </li>
 
             <li class="nav-item">
                 <a href="{{ route('admin.service.index') }}" class="nav-link">
@@ -50,7 +44,14 @@
             <li class="nav-item">
                 <a href="{{ route('admin.record.index') }}" class="nav-link">
                     <i class="nav-icon far fa-folder"></i>
-                        <p> Записи на приём </p>
+                        <p> Записи на приём 1</p>
+                    </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('admin.record2.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Записи на приём 2</p>
                     </a>
             </li>
 

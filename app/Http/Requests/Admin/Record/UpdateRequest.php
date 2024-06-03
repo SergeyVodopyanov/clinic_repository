@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Patient;
+namespace App\Http\Requests\Admin\Record;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,8 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-             'record_title' => 'required|string',
+            'patient_id' => 'required',
+            'speciality_id' => 'required',
         ];
     }
 }

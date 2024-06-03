@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Record;
+namespace App\Http\Controllers\Admin\Record2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Patient;
