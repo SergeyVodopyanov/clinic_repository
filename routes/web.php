@@ -26,6 +26,9 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
         Route::get('/', 'IndexController');
     });
+
+    Route::get('main/', 'Main\IndexController@index')->name('main.index');
+
     Route::group(['namespace' => 'Speciality', 'prefix' => 'specialities'], function () {
         Route::get('/', 'IndexController')->name('admin.speciality.index');
         Route::get('/create', 'CreateController')->name('admin.speciality.create');
@@ -119,6 +122,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['namespace' => 'Main'], function () {
     Route::get('/home', 'IndexController')->name('home');
+    Route::post('/logout', 'LogoutController')->name('my_logout');
 });
 //Route::get('/home', 'App\Http\Controllers\Main\IndexController')->name('home');
 
