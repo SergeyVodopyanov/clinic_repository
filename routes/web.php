@@ -20,12 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::group(['namespace' => 'Main'], function () {
-    Route::get('/', 'IndexController');
-});
+
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
-    Route::group(['namespace' => 'Main'], function () {
+    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
         Route::get('/', 'IndexController');
     });
     Route::group(['namespace' => 'Speciality', 'prefix' => 'specialities'], function () {
@@ -112,6 +110,17 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
 });
 
-
-
+/* Были вот эти роуты
+Route::group(['namespace' => 'Main'], function () {
+    Route::get('/', 'IndexController');
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+А стали эти:*/
+
+Route::group(['namespace' => 'Main'], function () {
+    Route::get('/home', 'IndexController')->name('home');
+});
+//Route::get('/home', 'App\Http\Controllers\Main\IndexController')->name('home');
+
+
+

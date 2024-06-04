@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Patient;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -50,9 +51,16 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'patient_surname' => 'string',
+            //'patient_name' => 'string',
+            //'patient_middlename' => 'string',
+            //'patient_gender' => 'required',
+            //'patient_dateofbirth' => 'required',
+            //'patient_medcardnumber' => 'required',
+            //'patient_phonenumber' => 'required',
+            'email' => 'string',
+            'password' => 'string',
+            'user_type' => 'string',
         ]);
     }
 
@@ -64,10 +72,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user = User::firstOrCreate([
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password']), // Хэширование пароля перед сохранением
+            'user_type' => 'patient',
         ]);
+
+        Patient::firstOrCreate([
+            'patient_surname' => $data['patient_surname'],
+            'patient_name' => $data['patient_name'],
+            'patient_middlename' => $data['patient_middlename'],
+            'patient_gender' => $data['patient_gender'],
+            'patient_dateofbirth' => $data['patient_dateofbirth'],
+            'patient_medcardnumber' => $data['patient_medcardnumber'],
+            'patient_phonenumber' => $data['patient_phonenumber'],
+            'user_id' => $user->id,
+        ]);
+
+        return $user;
     }
 }

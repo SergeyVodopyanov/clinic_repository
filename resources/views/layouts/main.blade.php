@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edica :: Home</title>
+    <title>Главная страница</title>
     <link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/font-awesome/css/all.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/aos/aos.css')}}">
@@ -19,7 +19,7 @@
     <header class="edica-header">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/logo.svg')}}" alt="Edica"></a>
+                <a class="navbar-brand" href="index.html"><img src="{{ asset('assets/images/health_icon.png')}}" alt="health_icon" width="60" height="60">Будьте здоровы</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -56,6 +56,29 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Download</a>
                         </li>
+                        @if($user == null)
+
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Войти') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
+                                </li>
+                            @endif
+
+                        @endif
+                        @if($user != null)
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="post">
+                                    @csrf
+                                    <button type="submit">Выйти</button>
+                                </form>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </nav>

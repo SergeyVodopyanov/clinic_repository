@@ -45,11 +45,17 @@
                                 <input type="text" class="form-control" name="patient_middlename" placeholder="Отчество">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_gender" placeholder="Пол">
+
+                                <label for="patient_gender">Пол:</label>
+                                <select name="patient_gender" id="patient_gender">
+                                    <option value="Мужчина">Мужчина</option>
+                                    <option value="Женщина">Женщина</option>
+                                </select>
                                 @error('patient_gender')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
                                 <input type="date" class="form-control" name="patient_dateofbirth" placeholder="Дата рождения">
                                 @error('patient_dateofbirth')
