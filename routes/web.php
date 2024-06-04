@@ -56,6 +56,34 @@ Route::group(['namespace' => 'Patient', 'prefix' => 'patient'], function () {
 
 
 
+Route::group(['namespace' => 'Doctor', 'prefix' => 'doctor'], function () {
+
+    Route::group(['namespace' => 'Account', 'prefix' => 'account'], function () {
+       Route::get('/', 'IndexController')->name('doctor.account.index');
+       Route::get('/{doctor}/edit', 'EditController')->name('doctor.account.edit');
+       Route::patch('/{doctor}', 'UpdateController')->name('doctor.account.update');
+    });
+
+    Route::group(['namespace' => 'Schedule', 'prefix' => 'schedules'], function () {
+        Route::get('/', 'IndexController')->name('doctor.schedule.index');
+        Route::get('/create', 'CreateController')->name('doctor.schedule.create');
+        Route::post('/', 'StoreController')->name('doctor.schedule.store');
+        Route::get('/{schedule}', 'ShowController')->name('doctor.schedule.show');
+        Route::get('/{schedule}/edit', 'EditController')->name('doctor.schedule.edit');
+        Route::patch('/{schedule}', 'UpdateController')->name('doctor.schedule.update');
+        Route::delete('/{schedule}', 'DeleteController')->name('doctor.schedule.delete');
+    });
+
+    //Route::group(['namespace' => 'Record4', 'prefix' => 'records4'], function () {
+    //    Route::get('/', 'IndexController')->name('patient.record4.index');
+    //    Route::get('/create', 'CreateController')->name('patient.record4.create');
+    //    Route::post('/', 'StoreController')->name('patient.record4.store');
+    //});
+
+});
+
+
+
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
         Route::get('/', 'IndexController');

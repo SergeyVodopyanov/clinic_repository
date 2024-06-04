@@ -89,6 +89,12 @@
                                 </li>
                         @endif
 
+                        @if (Auth::check() && Auth::user()->user_type == 'doctor' )
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('doctor.account.index') }}">Личный кабинет</a>
+                                </li>
+                        @endif
+
                         @if($user != null)
                             <li class="nav-item">
                                 <form action="{{ route('my_logout') }}" method="post">
