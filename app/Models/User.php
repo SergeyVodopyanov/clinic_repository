@@ -15,6 +15,24 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $guarded = false;
 
+    public function patient(){
+        if ($this->user_type == 'patient') {
+            return $this->hasOne(Patient::class);
+        }
+    }
+
+    public function doctor(){
+        if ($this->user_type == 'doctor') {
+            return $this->hasOne(Doctor::class);
+        }
+    }
+
+    public function admin(){
+        if ($this->user_type == 'admin') {
+            return $this->hasOne(Admin::class);
+        }
+    }
+
 
     /**
      * The attributes that are mass assignable.

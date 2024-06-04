@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Record4;
+namespace App\Http\Controllers\Patient\Record;
 
 use App\Http\Controllers\Controller;
 use App\Models\Patient;
 use App\Models\Speciality;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CreateController extends Controller
 {
     public function __invoke()
     {
-        $patients = Patient::all();
+        $patient = Auth::user()->patient;
         $specialities = Speciality::all();
-
-        return view('admin.record.create', compact('specialities', 'patients'));
+        return view('patient.record.create', compact('specialities', 'patient'));
     }
 }

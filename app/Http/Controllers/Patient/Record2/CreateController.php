@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Record4;
+namespace App\Http\Controllers\Patient\Record2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Patient;
@@ -13,7 +13,6 @@ class CreateController extends Controller
     {
         $patients = Patient::all();
         $specialities = Speciality::all();
-
-        return view('admin.record.create', compact('specialities', 'patients'));
+        return view('patient.record2.create', compact('specialities', 'patients'));
     }
 }
