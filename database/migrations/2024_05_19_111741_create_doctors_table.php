@@ -24,6 +24,9 @@ class CreateDoctorsTable extends Migration
             $table->index('speciality_id', 'doctor_speciality_idx');
             $table->foreign('speciality_id', 'doctor_speciality_fk')->on('specialities')->references('id');
 
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->softDeletes();
         });
     }

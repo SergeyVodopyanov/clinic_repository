@@ -43,6 +43,7 @@
                                         <th>Фамилия</th>
                                         <th>Имя</th>
                                         <th>Отчество</th>
+                                        <th>Электронная почта</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -52,6 +53,7 @@
                                         <td>{{ $doctor->doctor_name }}</td>
                                         <td>{{ $doctor->doctor_middlename }}</td>
                                         <td>{{ $doctor->speciality->speciality_title }}</td>
+                                        <td>{{ $doctor->user->email }}</td>
 
                                         <td>
                                             <a href="{{ route('admin.doctor.show', $doctor->id) }}">

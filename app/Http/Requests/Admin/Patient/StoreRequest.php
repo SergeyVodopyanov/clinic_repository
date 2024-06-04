@@ -31,7 +31,9 @@ class StoreRequest extends FormRequest
             'patient_dateofbirth' => 'required',
             'patient_medcardnumber' => 'required|integer',
             'patient_phonenumber' => 'required',
-            'patient_email' => 'required',
+            'email' => 'string',
+            'password' => 'string',
+            'user_type' => 'string',
         ];
 
     }

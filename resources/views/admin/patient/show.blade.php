@@ -78,9 +78,9 @@
                                        <td>{{ $patient->patient_phonenumber }}</td>
                                     </tr>
                                      <tr>
-                                       <td>Почта</td>
-                                       <td>{{ $patient->patient_email }}</td>
-                                    </tr>
+                                            <td>Электронная почта</td>
+                                            <td>{{ $patient->user->email }}</td>
+                                     </tr>
                                     </tbody>
                                 </table>
                             </div>

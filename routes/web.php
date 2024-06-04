@@ -73,6 +73,15 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
         Route::patch('/{doctor}', 'UpdateController')->name('admin.doctor.update');
         Route::delete('/{doctor}', 'DeleteController')->name('admin.doctor.delete');
     });
+    Route::group(['namespace' => 'Admin', 'prefix' => 'admins'], function () {
+        Route::get('/', 'IndexController')->name('admin.admin.index');
+        Route::get('/create', 'CreateController')->name('admin.admin.create');
+        Route::post('/', 'StoreController')->name('admin.admin.store');
+        Route::get('/{admin}', 'ShowController')->name('admin.admin.show');
+        Route::get('/{admin}/edit', 'EditController')->name('admin.admin.edit');
+        Route::patch('/{admin}', 'UpdateController')->name('admin.admin.update');
+        Route::delete('/{admin}', 'DeleteController')->name('admin.admin.delete');
+    });
 
 
 

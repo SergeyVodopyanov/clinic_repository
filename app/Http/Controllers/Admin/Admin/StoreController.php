@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Doctor;
+namespace App\Http\Controllers\Admin\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Doctor\StoreRequest;
+use App\Http\Requests\Admin\Admin\StoreRequest;
 use App\Models\Admin;
-use App\Models\Doctor;
 use App\Models\Speciality;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,18 +18,18 @@ class StoreController extends Controller
         $user = User::firstOrCreate([
             'email' => $data['email'],
             'password' => Hash::make($data['password']), // Хэширование пароля перед сохранением
-            'user_type' => 'doctor',
+            'user_type' => 'admin',
         ]);
 
-        Doctor::firstOrCreate([
-            'doctor_surname' => $data['doctor_surname'],
-            'doctor_name' => $data['doctor_name'],
-            'doctor_middlename' => $data['doctor_middlename'],
-            'speciality_id' => $data['speciality_id'],
+        Admin::firstOrCreate([
+            'admin_surname' => $data['admin_surname'],
+            'admin_name' => $data['admin_name'],
+            'admin_middlename' => $data['admin_middlename'],
             'user_id' => $user->id,
-
         ]);
-        return redirect()->route('admin.doctor.index');}
+
+        return redirect()->route('admin.admin.index');
+    }
 
 
 }

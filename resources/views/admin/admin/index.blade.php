@@ -7,7 +7,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0"> Пациенты </h1>
+                        <h1 class="m-0"> Администраторы </h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
             <div class="container-fluid"> <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-1 mb-3">
-                        <a href="{{ route('admin.patient.create') }}" class="btn btn-block btn-primary">
+                        <a href="{{ route('admin.admin.create') }}" class="btn btn-block btn-primary">
                             Добавить
                         </a>
                     </div>
@@ -42,36 +42,30 @@
                                         <th>Фамилия</th>
                                         <th>Имя</th>
                                         <th>Отчество</th>
-                                        <th>Пол</th>
-                                        <th>Дата рождения</th>
-                                        <th>Медкарта</th>
-                                        <th>Телефон</th>
-                                        <th>Почта</th>
+                                        <th>Электронная почта</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($patients as $patient)
+                                    @foreach($admins as $admin)
                                     <tr>
-                                        <td>{{ $patient->patient_surname }}</td>
-                                        <td>{{ $patient->patient_name }}</td>
-                                        <td>{{ $patient->patient_middlename }}</td>
-                                        <td>{{ $patient->patient_gender }}</td>
-                                        <td>{{ $patient->patient_dateofbirth }}</td>
-                                        <td>{{ $patient->patient_medcardnumber }}</td>
-                                        <td>{{ $patient->patient_phonenumber }}</td>
-                                        <td>{{ $patient->user->email }}</td>
+                                        <td>{{ $admin->admin_surname }}</td>
+                                        <td>{{ $admin->admin_name }}</td>
+                                        <td>{{ $admin->admin_middlename }}</td>
+                                        <td>{{ $admin->user->email }}</td>
+
                                         <td>
-                                            <a href="{{ route('admin.patient.show', $patient->id) }}">
+                                            <a href="{{ route('admin.admin.show', $admin->id) }}">
                                                 <i class="nav-icon far fa-solid fa-eye"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('admin.patient.edit', $patient->id) }}">
+                                            <a href="{{ route('admin.admin.edit', $admin->id) }}">
                                                 <i class="fa-solid fa-pen"></i>
                                             </a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.patient.delete', $patient->id) }}" method="POST">
+                                            <form action="{{ route('admin.admin.delete', $admin->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="border-0 bg-transparent">

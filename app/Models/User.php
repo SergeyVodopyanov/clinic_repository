@@ -12,6 +12,8 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     use SoftDeletes;
+    protected $table = 'users';
+    protected $guarded = false;
 
 
     /**
@@ -20,9 +22,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'user_type'
     ];
 
     /**

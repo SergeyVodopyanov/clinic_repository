@@ -42,6 +42,13 @@
             </li>
 
             <li class="nav-item">
+                <a href="{{ route('admin.admin.index') }}" class="nav-link">
+                    <i class="nav-icon far fa-folder"></i>
+                        <p> Администраторы </p>
+                    </a>
+            </li>
+
+            <li class="nav-item">
                 <a href="{{ route('admin.record.index') }}" class="nav-link">
                     <i class="nav-icon far fa-folder"></i>
                         <p> Записи на приём 1</p>

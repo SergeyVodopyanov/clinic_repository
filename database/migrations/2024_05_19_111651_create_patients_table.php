@@ -22,9 +22,12 @@ class CreatePatientsTable extends Migration
             $table->date('patient_dateofbirth');
             $table->integer('patient_medcardnumber');
             $table->string('patient_phonenumber');
-            $table->string('patient_email');
-            $table->timestamps();
 
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+
+            $table->timestamps();
             $table->softDeletes();
         });
     }

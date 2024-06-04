@@ -28,6 +28,10 @@ class UpdateRequest extends FormRequest
             'doctor_name' => 'required|string',
             'doctor_middlename' => 'string',
             'speciality_id' => 'required',
+            'email' => 'string',
+            'password' => 'string',
+            'user_type' => 'string',
+            'user_id' => 'required',
         ];
     }
 }

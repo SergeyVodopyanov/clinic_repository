@@ -74,12 +74,21 @@
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
+
                             <div class="form-group">
-                                <input type="text" class="form-control" name="patient_email" placeholder="Почта" value="{{ $patient->patient_email }}">
-                                @error('patient_email')
+                                <input type="text" class="form-control" name="email" placeholder="Электронная почта" value="{{ $patient->user->email }}">
+                                @error('email')
                                 <div class="text-danger">Это поле необходимо для заполнения</div>
                                 @enderror
                             </div>
+
+
+
+
+                            <div class="form-group w-50">
+                                <input type="hidden" name="user_id" value="{{ $patient->user_id }}">
+                            </div>
+
 
                              <input type="submit" class="btn btn-primary" value="Обновить">
                         </form>

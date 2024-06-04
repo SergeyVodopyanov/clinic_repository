@@ -7,11 +7,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6 d-flex align-items-center">
-                        <h1 class="m-0 mr-2"> Врач {{ $doctor->doctor_surname . " " . substr($doctor->doctor_name, 0, 1) . "." . substr($doctor->doctor_middlename, 0, 1) . "."}} </h1>
-                        <a href="{{ route('admin.doctor.edit', $doctor->id) }}">
+                        <h1 class="m-0 mr-2"> Администратор {{ $admin->admin_surname . " " . substr($admin->admin_name, 0, 1) . "." . substr($admin->admin_middlename, 0, 1) . "."}} </h1>
+                        <a href="{{ route('admin.admin.edit', $admin->id) }}">
                             <i class="nav-icon fa-solid fa-pen"></i>
                         </a>
-                        <form action="{{ route('admin.doctor.delete', $doctor->id) }}" method="POST">
+                        <form action="{{ route('admin.admin.delete', $admin->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="border-0 bg-transparent">
@@ -50,24 +50,20 @@
                                 <table class="table table-hover text-nowrap">
                                     <tbody>
                                         <tr>
-                                            <td>Специальность</td>
-                                            <td>{{ $doctor->speciality->speciality_title }}</td>
-                                        </tr>
-                                        <tr>
                                             <td>Фамилия</td>
-                                            <td>{{ $doctor->doctor_surname }}</td>
+                                            <td>{{ $admin->admin_surname }}</td>
                                         </tr>
                                         <tr>
                                             <td>Имя</td>
-                                            <td>{{ $doctor->doctor_name }}</td>
+                                            <td>{{ $admin->admin_name }}</td>
                                         </tr>
                                         <tr>
                                             <td>Отчество</td>
-                                            <td>{{ $doctor->doctor_middlename }}</td>
+                                            <td>{{ $admin->admin_middlename }}</td>
                                         </tr>
                                         <tr>
                                             <td>Электронная почта</td>
-                                            <td>{{ $doctor->user->email }}</td>
+                                            <td>{{ $admin->user->email }}</td>
                                         </tr>
 
                                     </tbody>
