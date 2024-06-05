@@ -27,8 +27,28 @@
             <div class="container-fluid"> <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form action="{{ route('admin.doctor.store') }}" method="POST" class="w-25">
+                        <form action="{{ route('admin.doctor.store') }}" method="POST" class="w-25" enctype="multipart/form-data">
+
                             @csrf
+
+
+                            <div class="form-group w-50">
+                                <label for="exampleInputFile">Добавить изображение</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="doctor_image">
+                                        <label class="custom-file-label">Выберите изображение</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Загрузка</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
                             <div class="form-group">
                                 <input type="text" class="form-control" name="doctor_surname" placeholder="Фамилия">
                                 @error('doctor_surname')

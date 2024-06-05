@@ -31,6 +31,7 @@ class StoreRequest extends FormRequest
             'email' => 'string',
             'password' => 'string',
             'user_type' => 'string',
+            'doctor_image' => 'max:20480',
         ];
 
     }
