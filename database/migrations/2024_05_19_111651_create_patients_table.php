@@ -24,7 +24,7 @@ class CreatePatientsTable extends Migration
             $table->string('patient_phonenumber');
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onDelete('cascade');
 
 
             $table->timestamps();

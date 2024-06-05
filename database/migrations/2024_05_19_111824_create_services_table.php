@@ -18,7 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('service_title');
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'service_speciality_idx');
-            $table->foreign('speciality_id', 'service_speciality_fk')->on('specialities')->references('id');
+            $table->foreign('speciality_id', 'service_speciality_fk')->on('specialities')->references('id')->onDelete('cascade');
 
             $table->timestamps();
             $table->softDeletes();

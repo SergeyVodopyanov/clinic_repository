@@ -21,7 +21,7 @@ class CreateSessionsTable extends Migration
 
             $table->unsignedBigInteger('schedule_id');
             $table->index('schedule_id', 'session_schedule_idx');
-            $table->foreign('schedule_id', 'session_schedule_fk')->on('schedules')->references('id');
+            $table->foreign('schedule_id', 'session_schedule_fk')->on('schedules')->references('id')->onDelete('cascade');
 
             $table->timestamps();
             $table->softDeletes();

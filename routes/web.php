@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Exports\RecordsExport;
+use App\Exports\RecordsExport2;
+use App\Exports\RecordsExport3;
+use Maatwebsite\Excel\Facades\Excel;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +22,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+Route::get('export', function () {
+    return Excel::download(new RecordsExport, 'records.xlsx');
+});
+Route::get('export2', function () {
+    return Excel::download(new RecordsExport2, 'records.xlsx');
+});
+Route::get('export3', function () {
+    return Excel::download(new RecordsExport3, 'records.xlsx');
+});
 
 
 Route::group(['namespace' => 'Patient', 'prefix' => 'patient'], function () {

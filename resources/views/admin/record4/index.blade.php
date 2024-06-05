@@ -30,7 +30,19 @@
                         <a href="{{ route('admin.record.create') }}" class="btn btn-block btn-primary">
                             Добавить
                         </a>
+
+
                     </div>
+                    <div class="col-2 mb-3">
+                        <a href="{{ url('export') }}" class="btn btn-block btn-success">Отчёт по врачам</a>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <a href="{{ url('export2') }}" class="btn btn-block btn-success">Отчёт по пациентам</a>
+                    </div>
+                    <div class="col-2 mb-3">
+                        <a href="{{ url('export3') }}" class="btn btn-block btn-success">Отчёт по специальностям</a>
+                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-12">

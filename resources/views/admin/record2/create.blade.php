@@ -35,7 +35,7 @@
                             <div class="form-group w-50">
                                 <label>{{ $record->patient->patient_surname . " " . $record->patient->patient_name . " " . $record->patient->patient_middlename}}</label>
                                 <input type="hidden" class="form-control" name="patient_id" value="{{ $record->patient->id }}">
-                                <span>{{ $record->patient->patient_surname . " " . $record->patient->patient_name . " " . $record->patient->patient_middlename }}</span>
+                               <!-- <span>{{ $record->patient->patient_surname . " " . $record->patient->patient_name . " " . $record->patient->patient_middlename }}</span> -->
                             </div>
 
 
@@ -43,7 +43,7 @@
                             <div class="form-group w-50">
                                 <label>{{ $record->speciality->speciality_title }}</label>
                                 <input type="hidden" class="form-control" name="speciality_id" value="{{ $record->speciality->id }}">
-                                <span>{{ $record->speciality->speciality_title }}</span>
+                               <!--  <span>{{ $record->speciality->speciality_title }}</span> -->
                             </div>
 
 

@@ -22,10 +22,10 @@ class CreateDoctorsTable extends Migration
 
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'doctor_speciality_idx');
-            $table->foreign('speciality_id', 'doctor_speciality_fk')->on('specialities')->references('id');
+            $table->foreign('speciality_id', 'doctor_speciality_fk')->on('specialities')->references('id')->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onDelete('cascade');
 
             $table->softDeletes();
         });

@@ -21,11 +21,11 @@ class CreateRecordsTable extends Migration
 
             $table->unsignedBigInteger('patient_id');
             $table->index('patient_id', 'record_patient_idx');
-            $table->foreign('patient_id', 'record_patient_fk')->on('patients')->references('id');
+            $table->foreign('patient_id', 'record_patient_fk')->on('patients')->references('id')->onDelete('cascade');
 
             $table->unsignedBigInteger('speciality_id');
             $table->index('speciality_id', 'record_speciality_idx');
-            $table->foreign('speciality_id', 'record_speciality_fk')->on('specialities')->references('id');
+            $table->foreign('speciality_id', 'record_speciality_fk')->on('specialities')->references('id')->onDelete('cascade');
 
             //$table->unsignedBigInteger('doctor_id');
             //$table->index('doctor_id', 'record_doctor_idx');

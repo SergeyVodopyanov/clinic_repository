@@ -32,31 +32,28 @@
 
 
 
-                            <div class="form-group w-50">
-                                <label>{{ $record->patient->patient_surname . " " . $record->patient->patient_name . " " . $record->patient->patient_middlename}}</label>
-                                <input type="hidden" class="form-control" name="patient_id" value="{{ $record->patient->id }}">
-                                <span>{{ $record->patient->patient_surname . " " . $record->patient->patient_name . " " . $record->patient->patient_middlename }}</span>
-                            </div>
+                            <input type="hidden" class="form-control" name="patient_id" value="{{ $record->patient->id }}">
+
 
 
                             <div class="form-group w-50">
                                 <label>{{ $record->speciality->speciality_title }}</label>
                                 <input type="hidden" class="form-control" name="speciality_id" value="{{ $record->speciality->id }}">
-                                <span>{{ $record->speciality->speciality_title }}</span>
+                                <!--<span>{{ $record->speciality->speciality_title }}</span>-->
                             </div>
 
 
                             <div class="form-group w-50">
                                 <label>{{ $record->doctor->doctor_surname . " " . $record->doctor->doctor_name . " " . $record->doctor->doctor_middlename}}</label>
                                 <input type="hidden" class="form-control" name="doctor_id" value="{{ $record->doctor->id }}">
-                                <span>{{ $record->doctor->doctor_surname . " " . $record->doctor->doctor_name . " " . $record->doctor->doctor_middlename }}</span>
+                                <!--<span>{{ $record->doctor->doctor_surname . " " . $record->doctor->doctor_name . " " . $record->doctor->doctor_middlename }}</span>-->
                             </div>
 
 
                             <div class="form-group w-50">
                                 <label>{{ $record->service->service_title }}</label>
                                 <input type="hidden" class="form-control" name="service_id" value="{{ $record->service->id }}">
-                                <span>{{ $record->service->service_title }}</span>
+                                <!--<span>{{ $record->service->service_title }}</span>-->
                             </div>
 
 
